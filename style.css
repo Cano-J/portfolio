@@ -10,9 +10,9 @@ body {
     font-family: Arial;
 }
 
-.border {
+/* .border {
     border: 1px solid;
-}
+} */
 
 .navigation a:hover{
     background-color: #aaa;
