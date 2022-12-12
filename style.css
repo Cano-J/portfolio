@@ -149,16 +149,11 @@ nav {
 }
 
 .home-footer {
-    /* padding: 1rem 0; */
     background-color: #222;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
 
-}
-
-.home-c {
-    margin: 1rem;
-    margin-left: 10rem;
 }
 
 .container-footer {
@@ -395,21 +390,6 @@ nav {
 
 /* ----------------blog---------------- */
 
-/* .blog-left-content {
-    width: 50%;
-    display: flex;
-    align-items: flex-end;
-}
-
-class="images-container"
-
-.blog-left-content {
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    flex-direction: column;
-    margin-top: 10rem;
-} */
 .brdr {
     border: 1px solid white;
 }
@@ -443,9 +423,6 @@ class="images-container"
 
 /* -------------------contact----------------------- */
 
-form{
-    
-}
 .form-container{
     width: 40%;
     padding: 1rem;
@@ -488,4 +465,60 @@ label{
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #222;
+}
+
+
+/* Global style --------------- */
+.mr-3{
+    margin-right: 1rem;
+}
+.col-3{
+    width: 33.33333%;
+    display: flex;
+}
+
+.d-inline-block{
+    display: inline-block;
+}
+
+.footer-copyright{
+    display: flex;
+    align-items: center;
+}
+
+
+/* ---------------responsive?------------------ */
+@media (max-width: 1064px){
+    .col-3{
+        width: 100%;
+    }
+    .container, .nav-header,.container-footer, .container-gmail, .home-footer{
+        width: 100%;
+    }
+
+    .img-me{
+        margin-left: 0;
+    }
+
+    .right-content{
+        width: 60%;
+    }
+    .footer-ul-gmail li a{
+        word-wrap: break-word;
+    }
+
+    .container-gmail{
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 1025px) {
+    
 }
