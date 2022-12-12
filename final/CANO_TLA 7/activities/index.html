@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+  <title></title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .brdr {
+      border: 1px solid;
+    }
+
+    .navigation {
+      position: relative;
+      background-color: #000;
+    }
+    .container {
+      max-width: 1132px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+    .navigation .container {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-brand-logo,
+    .footer-logo {
+      display: inline-flex;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    .navbar-brand-logo img,
+    .footer-logo img {
+      object-fit: cover;
+      width: 130px;
+      height: 40px;
+    }
+
+    .nav {
+      display: flex;
+      list-style-type: none;
+      margin-left: auto;
+    }
+    .nav li {
+      list-style-type: none;
+    }
+    .nav li a {
+      display: inline-flex;
+      padding: 12px 15px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .nav li a:hover {
+      background-color: #888;
+    }
+
+    .main-wrapper {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 50px);
+      position: relative;
+      padding: 3rem 1rem;
+    }
+
+    .home-bg {
+      background-image: url("img/bg.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .home-bg:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .blog-bg {
+      background-color: #ddd;
+    }
+
+    .contact-bg.main-wrapper {
+      min-height: auto;
+      background-color: #eee;
+    }
+
+    .w-100 {
+      width: 100%;
+    }
+
+    .w-50 {
+      display: flex;
+      width: 50%;
+    }
+
+    .bg-white-box {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .bg-white-box h1 {
+      font-size: 3rem;
+    }
+
+    .bg-white-box h3 {
+      color: #888;
+      margin-bottom: 1.5rem;
+    }
+
+    .bg-white-box p {
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .btn-link {
+      display: inline-block;
+      padding: 10px 30px;
+      background-color: rgb(31, 31, 185);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .grid-gallery {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      margin: 2rem 0 0;
+    }
+
+    .col-3 {
+      width: 33.33333%;
+      padding: 1rem;
+    }
+
+    .img-fluid {
+      object-fit: cover;
+      height: 200px;
+      display: inline-block;
+      max-width: 100%;
+    }
+
+    .contact-bg.main-wrapper h1 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    .wrap-form {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .form-input {
+      flex-grow: 1;
+      height: 30px;
+      border: 1px solid #eee;
+    }
+
+    .btn-form-submit {
+      height: 30px;
+      background-color: rgb(31, 31, 185);
+      color: #fff;
+      text-decoration: none;
+      align-items: center;
+      display: inline-flex;
+      justify-content: center;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .contact-bg.main-wrapper .bg-white-box {
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer {
+      padding: 5rem 0;
+      background-color: #222;
+    }
+
+    .footer-ul {
+      list-style-type: none;
+      margin-left: auto;
+    }
+
+    .footer-ul li a {
+      display: inline-flex;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer-ul li a img {
+      height: 20px;
+      margin-right: 1rem;
+    }
+
+    @media (max-width: 995px) {
+      .container {
+        flex-direction: column;
+        flex-wrap: unset;
+        width: 100%;
+        padding: 0 1rem;
+      }
+
+      .navigation .container {
+        flex-direction: unset;
+      }
+
+      .footer-ul {
+        justify-content: center;
+        text-align: center;
+        margin-left: 0;
+      }
+      .footer-ul li {
+        margin-bottom: 1rem;
+      }
+      .footer-logo {
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+  <body>
+    <div class="navigation">
+      <div class="container">
+        <a class="navbar-brand-logo" href=""
+          ><img src="img/logo.jpg" alt=""
+        /></a>
+        <ul class="nav">
+          <li>
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li>
+            <a class="nav-link" href="#blog">Blog</a>
+          </li>
+          <li>
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <section id="home" class="home-bg main-wrapper">
+      <div class="container">
+        <div class="bg-white-box w-100">
+          <h1>Survival</h1>
+          <p>
+            What this means is that we exist to help protect our environment and
+            do numbers of ways.
+          </p>
+          <a href="" class="btn-link"> Learn More Button </a>
+        </div>
+      </div>
+    </section>
+    <section id="blog" class="blog-bg main-wrapper">
+      <div class="container">
+        <div class="bg-white-box w-100">
+          <h1>Latest Articles</h1>
+          <h3>Breaking news from the wild</h3>
+          <div class="grid-gallery">
+            <div class="col-3">
+              <img class="img-fluid" src="img/1bird.jpg" alt="" />
+            </div>
+            <div class="col-3">
+              <img class="img-fluid" src="img/2bird.jpg" alt="" />
+            </div>
+            <div class="col-3">
+              <img class="img-fluid" src="img/3bird.jpg" alt="" />
+            </div>
+            <div class="col-3">
+              <img class="img-fluid" src="img/1deer.jpg" alt="" />
+            </div>
+            <div class="col-3">
+              <img class="img-fluid" src="img/2deer.jpg" alt="" />
+            </div>
+            <div class="col-3">
+              <img class="img-fluid" src="img/3deer.jpg" alt="" />
+            </div>
+            <div class="col-3">
+              <img class="img-fluid" src="img/1Squirrel.jpg" alt="" />
+            </div>
+            <div class="col-3">
+              <img class="img-fluid" src="img/2Squirrel.jpg" alt="" />
+            </div>
+            <div class="col-3">
+              <img class="img-fluid" src="img/3Squirrel.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="contact-bg main-wrapper">
+      <div class="container">
+        <div class="bg-white-box w-100">
+          <h1>Get notified about new amazing articles</h1>
+          <div class="wrap-form">
+            <input type="text" class="form-input" />
+            <a href="" class="btn-form-submit">Send</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <a href="" class="footer-logo">
+          <img src="img/logo.jpg" alt="" />
+        </a>
+        <ul class="footer-ul">
+          <li>
+            <a href=""> Articles </a>
+          </li>
+          <li>
+            <a href=""> About us </a>
+          </li>
+          <li>
+            <a href=""> Learn More </a>
+          </li>
+        </ul>
+        <ul class="footer-ul">
+          <li>
+            <a href="">
+              <img src="img/facebook.png" alt="" />
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="img/instagram.png" alt="" />
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="img/pinterest.png" alt="" />
+              Pinterest
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

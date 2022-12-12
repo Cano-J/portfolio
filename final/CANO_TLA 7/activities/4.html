@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .brdr {
+      border: 1px solid;
+      height: 10%;
+      padding: 1rem;
+      display: inline-block;
+      padding: 2rem;
+      margin-top: 2rem;
+      margin-left: 1rem;
+    }
+  </style>
+  <body>
+    <div id="rn" class="brdr"></div>
+    <script type="text/javascript">
+      function reverse_a_number(n) {
+        n = n + "";
+        return n.split("").reverse().join("");
+      }
+      var a = (document.getElementById("rn").innerText = Number(
+        reverse_a_number(987654321)
+      ));
+      //   console.log(Number(reverse_a_number(987654321)));
+    </script>
+  </body>
+</html>

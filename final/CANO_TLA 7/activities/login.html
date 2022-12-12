@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <!-- <head>
+    <link rel="stylesheet" type="text/css" href="./login.css" />
+  </head> -->
+  <style>
+    *,
+    *::before,
+    *::after {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .login-main {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top 57% center;
+    }
+
+    .login-form {
+      padding: 3rem;
+      border: 1px solid #ddd;
+      width: 400px;
+      background-color: #fff;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .login-title {
+      margin-bottom: 1rem;
+      margin-top: 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .form-control {
+      width: 100%;
+      display: flex;
+      height: 45px;
+      padding: 0.5rem 0.75rem;
+    }
+
+    .form-control-label {
+      display: inline-flex;
+      text-transform: capitalize;
+    }
+
+    .btn {
+      outline: none;
+      box-shadow: none;
+      padding: 1rem 1rem;
+      border: 1px transparent;
+    }
+
+    .btn-fluid {
+      width: 45%;
+    }
+
+    .btn-primary {
+      background-color: #ddd;
+      color: black;
+    }
+    .btn-signup {
+      background-color: blue;
+      color: white;
+      float: left;
+    }
+    button {
+      border: none;
+      cursor: pointer;
+    }
+
+    .login-logo {
+      max-width: 100%;
+    }
+    .form-action-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .loginbtn,
+    .signupbtn {
+      width: 100%;
+    }
+  </style>
+  <body>
+    <form name="myForm" class="login-main">
+      <div class="login-form">
+        <h1 class="login-title">login</h1>
+        <div class="form-group">
+          <label for="username" class="form-control-label">username</label>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            class="form-control"
+            autocomplete="off"
+          />
+        </div>
+        <div class="form-group">
+          <label for="" class="form-control-label">password</label>
+          <input id="pass" name="pass" type="password" class="form-control" />
+        </div>
+        <div class="form-action-2">
+          <div>
+            <button
+              type="button"
+              class="loginbtn btn btn-primary btn-fluid"
+              onclick="validate()"
+            >
+              Login
+            </button>
+          </div>
+          <div>
+            <button
+              onclick="signUp()"
+              type="button"
+              class="signupbtn btn btn-signup btn-fluid"
+            >
+              SignUp
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <script type="text/javascript">
+      let attempts = 0;
+
+      function validate() {
+        // var usernameInput = document.getElementById("username").value;
+        // var passwordInput = document.getElementById("pass").value;
+        var usernameInput = document.forms["myForm"]["username"].value;
+        var passwordInput = document.forms["myForm"]["pass"].value;
+        console.log("before Attempts: " + attempts);
+
+        if (attempts != 3) {
+          if (usernameInput == "" || passwordInput == "") {
+            alert("Please enter each details completely.");
+            attempts++;
+            return false;
+          } else if (usernameInput != "jennycano") {
+            alert("Username is incorrect.");
+            attempts++;
+          } else if (passwordInput != "qwerty") {
+            alert("Password is incorrect.");
+            attempts++;
+          } else if (
+            usernameInput == "jennycano" &&
+            passwordInput == "qwerty"
+          ) {
+            alert("SuccessFully Logged In");
+            window.location = "index.html";
+          }
+          console.log("after Attempts: " + attempts);
+        } else {
+          alert("No attempts left.");
+          return false;
+        }
+        return false;
+      }
+      function signUp() {
+        window.location = "signup.html";
+        return false;
+      }
+    </script>
+  </body>
+</html>

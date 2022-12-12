@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Full-width input fields */
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0;
+      display: flex;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+
+    /* Set a style for all buttons */
+    button {
+      background-color: rgb(28, 183, 235);
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      opacity: 0.9;
+    }
+
+    button:hover {
+      opacity: 1;
+    }
+
+    /* Extra styles for the clear/reset button */
+    .clearbtn {
+      padding: 14px 20px;
+      background-color: #aaa;
+      width: 100%;
+    }
+
+    /* Float clear and signup buttons and add an equal width */
+
+    .signupbtn {
+      width: 100%;
+    }
+    /* .btn-fluid {
+      width: 50%;
+    } */
+    .btn {
+      outline: none;
+      box-shadow: none;
+      padding: 1rem 1rem;
+      border: 1px transparent;
+    }
+
+    /* Add padding to container elements */
+    .container {
+      padding: 1rem;
+    }
+
+    /* Clear floats */
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    /* Change styles for clear button and signup button on extra small screens */
+    @media screen and (max-width: 300px) {
+      .clearbtn,
+      .signupbtn {
+        width: 100%;
+      }
+    }
+    .form-action-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .help-block {
+      color: #ff0000;
+      font-size: 80%;
+      display: none;
+    }
+  </style>
+  <body>
+    <form
+      name="myForm"
+      action=""
+      style="border: 1px solid #ccc; width: 30%; margin: auto; margin-top: 8rem"
+    >
+      <div class="container">
+        <h1>Sign Up</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr />
+
+        <div class="form-group">
+          <label for="name"><b>Name</b></label>
+          <input
+            id="name"
+            type="text"
+            placeholder="Enter Name"
+            name="name"
+            autocomplete="off"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email"><b>Email</b></label>
+          <input
+            id="email"
+            type="text"
+            placeholder="Enter Email"
+            name="email"
+            autocomplete="off"
+          />
+          <div class="help-block">Please enter your email.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="psw"><b>Password</b></label>
+          <input
+            id="password"
+            type="password"
+            placeholder="Enter Password"
+            name="psw"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="confirm_pass"><b>Confirm Password</b></label>
+          <input
+            id="cpassword"
+            type="password"
+            placeholder="Confirm Password"
+            name="confirm_pass"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="clearfix form-action-2">
+          <div>
+            <button
+              onclick="submitForm()"
+              type="button"
+              class="signupbtn btn btn-fluid"
+            >
+              Sign Up
+            </button>
+          </div>
+          <div>
+            <button
+              onclick="clearText()"
+              id="clearbtn"
+              type="reset"
+              class="clearbtn btn btn-fluid"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <script type="text/javascript">
+      function clearText() {
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("password").value = "";
+        document.getElementById("cpassword").value = "";
+      }
+
+      function submitForm() {
+        // var nameInput = document.getElementById("name");
+        // var emailInput = document.getElementById("email");
+        // var passwordInput = document.getElementById("password");
+        // var cpasswordInput = document.getElementById("cpassword");
+        var nameInput = document.forms["myForm"]["name"].value;
+        var emailInput = document.forms["myForm"]["email"].value;
+        var passwordInput = document.forms["myForm"]["password"].value;
+        var cpasswordInput = document.forms["myForm"]["cpassword"].value;
+
+        var letters = /^[A-Za-z]+$/;
+        var email_val = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if (
+          nameInput == "" ||
+          emailInput == "" ||
+          passwordInput == "" ||
+          cpasswordInput == ""
+        ) {
+          alert("Please enter each details correctly.");
+          return false;
+        } else if (!letters.test(nameInput)) {
+          alert("Name is incorrect must contain alphabets only");
+        } else if (!email_val.test(emailInput)) {
+          alert("Invalid email format please enter valid email id");
+        } else if (passwordInput != cpasswordInput) {
+          alert("Password is not matched");
+        } else if (document.getElementById("password").value.length > 12) {
+          alert("Max Password length reached");
+        } else if (document.getElementById("password").value.length < 6) {
+          alert("Password length min is 6");
+        } else {
+          alert("Account created successfully...Redirecting to Home Page");
+          window.location = "index.html";
+        }
+        return false;
+      }
+    </script>
+  </body>
+</html>

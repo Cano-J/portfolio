@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .brdr {
+      border: 1px solid;
+      height: 10%;
+      padding: 1rem;
+      display: inline-block;
+      padding: 2rem;
+      margin-top: 2rem;
+      margin-left: 1rem;
+    }
+  </style>
+  <body>
+    <div id="v" class="brdr">1</div>
+    <script type="text/javascript">
+      function vowel_count(str1) {
+        var v_list = "aeiouAEIOU";
+        var count = 0;
+
+        for (var x = 0; x < str1.length; x++) {
+          if (v_list.indexOf(str1[x]) !== -1) {
+            count += 1;
+          }
+        }
+        return count;
+      }
+      var a = (document.getElementById("v").innerText = vowel_count(
+        "Jeeenny Babeeeee Cano"
+      ));
+
+      // console.log(vowel_count("Jenny Babe Cano"));
+    </script>
+  </body>
+</html>

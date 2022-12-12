@@ -1,0 +1,54 @@
+.nav-header {
+    text-align: left;
+    font-size: large;
+}
+
+.web-text {
+    text-align: center;
+}
+
+.web {
+    text-align: center;
+}
+
+.about {
+    text-align: center;
+}
+
+th,
+td {
+    border: 1px solid black;
+    ;
+}
+
+.image {
+    border: 0;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.resources {
+    text-align: center;
+}
+
+.resources-table {
+    width: 500px;
+    margin: auto;
+}
+
+.photos-table {
+    width: 100px;
+    margin: auto;
+}
+
+.photos {
+    text-align: center;
+}
+
+.jenny-img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}

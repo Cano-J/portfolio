@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .form-action-1 {
+      display: grid;
+    }
+    .brdr {
+      border: 1px solid;
+      height: 10%;
+      padding: 1rem;
+      display: inline-block;
+      padding: 2rem;
+      margin-top: 2rem;
+      margin-left: 1rem;
+    }
+  </style>
+  <body>
+    <div id="com" class="brdr"></div>
+    <script type="text/javascript">
+      function substrings(str1) {
+        var array1 = [];
+        for (var x = 0, y = 1; x < str1.length; x++, y++) {
+          array1[x] = str1.substring(x, y);
+        }
+        var combi = [];
+        var temp = "";
+        var slent = Math.pow(2, array1.length);
+
+        for (var i = 0; i < slent; i++) {
+          temp = "";
+          for (var j = 0; j < array1.length; j++) {
+            if (i & Math.pow(2, j)) {
+              temp += array1[j];
+            }
+          }
+          if (temp !== "") {
+            combi.push(temp);
+          }
+        }
+        var a = (document.getElementById("com").innerText = combi.join());
+
+        // console.log(combi.join("\n"));
+      }
+
+      substrings("Babe");
+    </script>
+  </body>
+</html>

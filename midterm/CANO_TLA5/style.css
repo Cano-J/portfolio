@@ -1,0 +1,140 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+}
+
+.navigation {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    background: #1565C0;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.navigation li {
+    flex: 1 1 0;
+    list-style-type: none;
+}
+
+.navigation a {
+    text-decoration: none;
+    display: flex;
+    padding: 1em;
+    color: white;
+    flex-grow: 1;
+}
+
+.navigation a:hover {
+    background: deepskyblue;
+
+}
+
+.title {
+    color: white;
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.images-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.images-a {
+    display: flex;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #585858;
+    background-color: black;
+    border: 1px solid #ddd;
+    width: 50%;
+    padding: 1rem;
+    flex-direction: column;
+}
+
+.text-img-title {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 23px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.text-img-desc {
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.img-food {
+    height: 280px;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (max-width:768px) {
+    .images-a {
+        width: 100%;
+    }
+}
+
+/* CSS custom pop-up --------------------------------- */
+.modal {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 77, 77, 0.7);
+    transition: all 0.4s;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal__content {
+    position: relative;
+    width: 500px;
+    max-width: 90%;
+}
+
+.modal__footer {
+    text-align: right;
+}
+
+.modal__close {
+    position: absolute;
+    top: 0.25rem;
+    right: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 3rem;
+}
+
+.popup-content {
+    max-width: 500px;
+}
+
+.popup-content img {
+    max-width: 100%;
+}
